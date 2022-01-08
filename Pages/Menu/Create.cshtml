@@ -1,0 +1,49 @@
+﻿@page
+@model Restaurant.Pages.Menu.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>a new menu item</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Menu_items.category" class="control-label"></label>
+                <input asp-for="Menu_items.category" class="form-control" />
+                <span asp-validation-for="Menu_items.category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Menu_items.name" class="control-label"></label>
+                <input asp-for="Menu_items.name" class="form-control" />
+                <span asp-validation-for="Menu_items.name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Menu_items.price" class="control-label"></label>
+                <input asp-for="Menu_items.price" class="form-control" />
+                <span asp-validation-for="Menu_items.price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Menu_items.description" class="control-label"></label>
+                <input asp-for="Menu_items.description" class="form-control" />
+                <span asp-validation-for="Menu_items.description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="IndexAdmin">Back to Menu</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,49 @@
+﻿@page "/"
+@model Restaurant.Pages.Menu.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>MENU</h1>
+
+<p>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Menu_items[0].category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Menu_items[0].name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Menu_items[0].price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Menu_items[0].description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Menu_items) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,62 @@
+﻿@page
+@model Restaurant.Pages.Reservations.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+<script>
+    function on_click() { alert("Reservation made successfully!"); }
+</script>
+<h1>Make</h1>
+
+<h4>a reservation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Reservation.date" class="control-label"></label>
+                <input asp-for="Reservation.date" class="form-control" />
+                <span asp-validation-for="Reservation.date" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="Reservation.client" class="control-label"></label>
+                <input asp-for="Reservation.client" class="form-control" />
+                <span asp-validation-for="Reservation.client" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reservation.email" class="control-label"></label>
+                <input asp-for="Reservation.email" class="form-control" />
+                <span asp-validation-for="Reservation.email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reservation.phone_number" class="control-label"></label>
+                <input asp-for="Reservation.phone_number" class="form-control" />
+                <span asp-validation-for="Reservation.phone_number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reservation.observations" class="control-label"></label>
+                <input asp-for="Reservation.observations" class="form-control" />
+                <span asp-validation-for="Reservation.observations" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reservation.people_expected" class="control-label"></label>
+                <input asp-for="Reservation.people_expected" class="form-control" />
+                <span asp-validation-for="Reservation.people_expected" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" onclick="on_click()" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to Reservation</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

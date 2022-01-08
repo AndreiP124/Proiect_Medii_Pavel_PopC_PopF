@@ -1,0 +1,45 @@
+﻿@page
+@model Restaurant.Pages.Menu.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Menu_items.category)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Menu_items.category)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Menu_items.name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Menu_items.name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Menu_items.price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Menu_items.price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Menu_items.description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Menu_items.description)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Menu_items.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./IndexAdmin">Back to Menu</a>
+    </form>
+</div>

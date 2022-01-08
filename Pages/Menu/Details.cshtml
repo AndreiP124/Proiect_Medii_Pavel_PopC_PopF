@@ -1,0 +1,41 @@
+﻿@page
+@model Restaurant.Pages.Menu.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Menu_items.category)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Menu_items.category)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Menu_items.name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Menu_items.name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Menu_items.price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Menu_items.price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Menu_items.description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Menu_items.description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Menu_items.Id">Edit</a> |
+    <a asp-page="./IndexAdmin">Back to Menu</a>
+</div>
